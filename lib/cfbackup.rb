@@ -15,7 +15,13 @@
 #     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'rubygems'
-require 'ftools'
+
+if RUBY_VERSION >= '1.9.1'
+  require 'fileutils'
+else
+  require 'ftools'
+end
+
 require 'cloudfiles'
 require 'optcfbackup'
 require 'yaml'
